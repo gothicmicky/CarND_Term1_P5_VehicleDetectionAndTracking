@@ -40,10 +40,10 @@ def bbox_pipeline(bbox, img, bbox_list=[]):
     # Find final boxes from heatmap using label function
     labels = label(heatmap)
     # img = bbox.draw_bboxes(img, bbox_list)
-    draw_img = bbox.draw_labeled_bboxes(img, labels)
+    # draw_img = bbox.draw_labeled_bboxes(img, labels)
     
     # To view the heatmap boxes?
-    # draw_img = np.array(np.dstack((heatmap, heatmap, heatmap))*255, dtype='uint8')
+    draw_img = np.array(np.dstack((heatmap, heatmap, heatmap))*255, dtype='uint8')
     
     # Alpha blending
     draw_img = cv2.addWeighted(draw_img, 0.5, img, 0.5, 0) 
@@ -62,5 +62,5 @@ for idx, f in enumerate(images):
 	print(img.shape)
 	res = bbox_pipeline(bbox, img, bbox_list)
 	plt.imshow(res)
-	plt.show()
-	plt.savefig('output_images/pipeline_output'+str(idx))
+	# plt.show()
+	plt.imsave('output_images/heat_map'+str(idx)+'.jpg',res)
