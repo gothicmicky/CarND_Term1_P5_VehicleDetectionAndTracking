@@ -1,8 +1,8 @@
-## Vehicle Detection Project ##
+# Vehicle Detection Project
 ![alt text][image0]
 
 ---
-### Project Overview
+## Project Overview
 The goal of the project is to write a software pipeline to identify vehicles in a video from a front-facing camera on a car. The steps taken are stated below:
 
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
